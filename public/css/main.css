@@ -130,9 +130,10 @@
   }
   
   p {
-    color: #444;
-    font-weight: 300;
-  }
+    font-size: 1rem;
+    font-family: sans-serif;
+    margin: 20px;
+}
   
   p#data {
     border-top: 1px dotted #666;
@@ -227,9 +228,9 @@
   video {
     background: #222;
     margin: 0 0 20px 0;
-    --width: 100%;
+    --width: 70%;
     width: var(--width);
-    height: calc(var(--width) * 0.75);
+    height: calc(var(--width) * 0.5);
   }
   
   ul {

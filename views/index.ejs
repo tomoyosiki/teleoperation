@@ -1,13 +1,68 @@
-<!DOCTYPE html> 
-<head> 
-    <title>Simple realtime chatroom</title>
-    <meta charset = "utf-8" /> 
-</head> 
-	
-<body> 
-    <video autoplay></video> 
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <base target="_blank">
+    <title>Teleoperation Room</title>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+    <div id="container">
+        <h1>Teleoperation Demo</h1>
+
+        <div>
+        <video id="gum-local" autoplay playsinline></video>
+        </div>
+        <button id="showVideo">Get Video Stream</button>
+       
+        <div class="card">
+            <div class="card-header">Operator XXX</div>
+
+            <div style="height:400px;width:50%;overflow:auto;border:2px solid yellowgreen">
+            <p>
+                Reading from the keyboard  and Publishing to Twist! <br>
+                --------------------------- <br>
+                Moving around: <br>
+                u    i    o <br>
+                j    k    l <br>
+                m    ,    . <br>
+                For Holonomic mode (strafing), hold down the shift key: <br>
+                --------------------------- <br>
+                U    I    O <br>
+                J    K    L <br>
+                M    <    > <br>
+                t : up (+z) <br>
+                b : down (-z) <br>
+                anything else : stop <br>
+                q/z : increase/decrease max speeds by 10% <br>
+                w/x : increase/decrease only linear speed by 10% <br>
+                e/c : increase/decrease only angular speed by 10% <br>
+                CTRL-C to quit <br>
+            </p>
+            </div>
+
+            <div class="message-box">
+                <ul class="list-group list-group-flush" id="message-list"></ul>
+                <div class="info"></div>
+            </div>
+
+            <div class="card-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="message" placeholder="Send new message" >
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="button" id="messageBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+ 
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
-    <script src="/js/client.js"></script> 
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="/js/getusermedia.js"></script>
+    <script src="/js/command.js"></script>
+    <script src="/js/lib/ga.js"></script>
 </body>
-	
 </html>
