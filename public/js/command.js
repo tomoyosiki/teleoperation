@@ -1,5 +1,5 @@
 (function connect(){
-    let socket = io.connect('http://localhost:3000')
+    let socket = io.connect('http://35.16.6.35:3000')
 
     let username = document.querySelector('#username')
     let curUsername = document.querySelector('.card-header')
@@ -23,7 +23,6 @@
     })
     
     socket.on('typing', data => {
-        console.log('data')
         info.textContent = "current speed is " + data.speed + ", turn is " + data.turn;
         //setTimeout(() => {info.textContent=''}, 5000)
     })
